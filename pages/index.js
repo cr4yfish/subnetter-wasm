@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { Button, Text, Container, Table, Input, Spacer, Grid } from "@nextui-org/react"
+import { Button, Text, Container, Table, Input, Spacer, Grid, Link } from "@nextui-org/react"
+import { FaGithub } from "react-icons/fa"
 
 export default function Home({}) {
     const [rows, setRows] = useState([]);
@@ -72,10 +73,13 @@ export default function Home({}) {
         <Container>
             <Container>
             <Spacer/>
-            <Grid.Container>
+            <Grid.Container grap={3}>
                 <Grid><Text h2>DNIS Tabellen Rechner</Text></Grid>
-                <Grid><Text h5>Website by <a href="https://github.com/cr4yfish">Manuel</a> & Rust Code by <a href="https://github.com/codinghusi">Gerrit</a></Text></Grid>
-                <Grid><Text p><a href="https://github.com/cr4yfish/subnetter-wasm">Source</a></Text></Grid>
+                <Container style={{paddingLeft:0}}>
+                    <Text h5>Website by <Link href="https://github.com/cr4yfish">Manuel</Link> & Rust Code by <Link href="https://github.com/codinghusi">Gerrit</Link></Text>
+                    <Text p><Link color="secondary" href="https://github.com/cr4yfish/subnetter-wasm"><FaGithub />&nbsp;Source</Link></Text>
+                </Container>
+      
             </Grid.Container>
             
             <Spacer />
