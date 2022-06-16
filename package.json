@@ -1,0 +1,34 @@
+{
+  "name": "subnetter-wasm",
+  "version": "1.0.0",
+  "description": "*Deutsch/German*\r Ein kleines Programm, in das man eine Liste von Netzen mit gegebener Hostanzahl eingeben kann.\r Bei entsprechender Angabe des IP-Adressbereichs wird dann alles gesubnettet und als Tabelle ausgegeben.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev -p 30001",
+    "start": "next start -p 30001",
+    "lint": "next lint",
+    "build-rust": "rustc --target wasm32-unknown-unknown -O --crate-type=cdylib src/lib.rs -o subnetter.wasm"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cr4yfish/subnetter-wasm.git"
+  },
+  "author": "cr4yfish",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cr4yfish/subnetter-wasm/issues"
+  },
+  "homepage": "https://github.com/cr4yfish/subnetter-wasm#readme",
+  "dependencies": {
+    "@nextui-org/react": "^1.0.0-beta.9",
+    "@wasm-tool/wasm-pack-plugin": "^1.6.0",
+    "next": "^12.1.6",
+    "next-compose-plugins": "^2.2.1",
+    "next-pwa": "^5.5.4",
+    "next-themes": "^0.2.0",
+    "path": "^0.12.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "subnetter": "^1.0.0"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "subnetter",
+  "collaborators": [
+    "cr4yfish",
+    "codinghusi"
+  ],
+  "version": "1.2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cr4yfish/subnetter-wasm"
+  },
+  "files": [
+    "subnetter_bg.wasm",
+    "subnetter.js",
+    "subnetter_bg.js",
+    "subnetter.d.ts"
+  ],
+  "module": "subnetter.js",
+  "types": "subnetter.d.ts",
+  "sideEffects": false
+}
