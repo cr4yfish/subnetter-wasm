@@ -74,10 +74,10 @@ export default function Home({}) {
             <Container>
             <Spacer/>
             <Grid.Container grap={3}>
-                <Grid><Text h2>DNIS Tabellen Rechner</Text></Grid>
+                <Grid><Text h1>DNIS Tabellen Rechner</Text></Grid>
                 <Container style={{paddingLeft:0}}>
                     <Text h5>Website by <Link href="https://github.com/cr4yfish">Manuel</Link> & Rust Code by <Link href="https://github.com/codinghusi">Gerrit</Link></Text>
-                    <Text p><Link color="secondary" href="https://github.com/cr4yfish/subnetter-wasm"><FaGithub />&nbsp;Source</Link></Text>
+                    <Text><Link color="secondary" href="https://github.com/cr4yfish/subnetter-wasm"><FaGithub />&nbsp;Source</Link></Text>
                 </Container>
       
             </Grid.Container>
