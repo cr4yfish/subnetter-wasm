@@ -70,8 +70,8 @@ export default function Home({}) {
     }
 
     return (
+        <>
         <Container>
-            <Container>
             <Spacer/>
             <Grid.Container grap={3}>
                 <Grid><Text h1>DNIS Tabellen Rechner</Text></Grid>
@@ -79,7 +79,7 @@ export default function Home({}) {
                     <Text h5>Website by <Link href="https://github.com/cr4yfish">Manuel</Link> & Rust Code by <Link href="https://github.com/codinghusi">Gerrit</Link></Text>
                     <Text><Link color="secondary" href="https://github.com/cr4yfish/subnetter-wasm"><FaGithub />&nbsp;Source</Link></Text>
                 </Container>
-      
+    
             </Grid.Container>
             
             <Spacer />
@@ -90,9 +90,11 @@ export default function Home({}) {
             </Grid.Container>
             <Spacer />
             <Button color="secondary" rounded ghost onClick={() => workerRef.current.postMessage(form)}>Calculate Values</Button>
-            <CsvTable />
-            </Container>
-
+      
         </Container>
+        <CsvTable />
+        </>
+   
+        
     )
 }
