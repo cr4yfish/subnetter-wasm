@@ -29,6 +29,6 @@
     "path": "^0.12.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "subnetter": "^1.0.0"
+    "subnetter": "^1.2.0"
   }
 }
