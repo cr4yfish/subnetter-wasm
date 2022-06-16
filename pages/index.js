@@ -72,7 +72,12 @@ export default function Home({}) {
         <Container>
             <Container>
             <Spacer/>
-            <Text h2>Type in your information</Text>
+            <Grid.Container>
+                <Grid><Text h2>DNIS Tabellen Rechner</Text></Grid>
+                <Grid><Text h5>Website by <a href="https://github.com/cr4yfish">Manuel</a> & Rust Code by <a href="https://github.com/codinghusi">Gerrit</a></Text></Grid>
+                <Grid><Text p><a href="https://github.com/cr4yfish/subnetter-wasm">Source</a></Text></Grid>
+            </Grid.Container>
+            
             <Spacer />
             <Grid.Container  gap={5}>
                 <Grid><Input clearable underlined labelPlaceholder="First Name" onChange={(e) => setForm({...form, firstName: e.target.value})} /></Grid>
