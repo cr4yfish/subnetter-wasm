@@ -4,10 +4,12 @@ import { FaGithub, FaHandPointRight } from "react-icons/fa"
 import { MdOutlineFiberNew } from "react-icons/md"
 import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import csvDownload from "json-to-csv-export";
 
 export default function Home({}) {
     const [rows, setRows] = useState([]);
     const [form, setForm] = useState({firstName: "", lastName: "", prefix: 12});
+
 
     const columns = [
         {
@@ -68,6 +70,7 @@ export default function Home({}) {
         }
         workerRef.current.onmessage = (e) => {
             const data = JSON.parse(e.data);
+            console.log(data);
             setRows(data);
         }
     }, [])
@@ -114,6 +117,8 @@ export default function Home({}) {
         }
     }
 
+    
+
     return (
         <>
         <Container>
@@ -129,6 +134,7 @@ export default function Home({}) {
             <Spacer />
             <Collapse bordered arrowIcon={<MdOutlineFiberNew fontSize={30} />} title="Changelog">
                 <ul>
+                    <li><FaHandPointRight /> Added CSV Download</li>
                     <li><FaHandPointRight /> Fixed having to click "calculate value" button twice</li>
                     <li><FaHandPointRight /> Changed "prefix" to more accurate name</li>
                     <li><FaHandPointRight /> Added auto-copy when clicking on a cell in the table</li>
@@ -142,10 +148,16 @@ export default function Home({}) {
             <Grid.Container gap={2} alignItems="center" style={{paddingLeft:0}}>
                 <Grid><Input bordered clearable label="First Name" onChange={(e) => setForm({...form, firstName: e.target.value})} required /></Grid>
                 <Grid><Input bordered clearable label="Last Name" onChange={(e) => setForm({...form, lastName: e.target.value})} required /></Grid>
-                <Grid><Input bordered label="Subnet Suffix" initialValue={12} labelLeft="/" type="number" onChange={(e) => setForm({...form, prefix: parseInt(e.target.value)})}/></Grid>
+                <Grid><Input bordered label="Subnet Suffix" initialValue={form.prefix} labelLeft="/" type="number" onChange={(e) => setForm({...form, prefix: parseInt(e.target.value)})}/></Grid>
             </Grid.Container>
             <Spacer />
-            <Button shadow onClick={submitHandler}>Calculate Values</Button>
+            <Grid.Container gap={2}>
+                <Grid><Button shadow onClick={submitHandler}>Calculate Values</Button></Grid>
+                {rows.length > 0 ?  <Grid><Button color="secondary" ghost onClick={() => csvDownload(rows)}>Download CSV</Button></Grid> : null}
+            </Grid.Container>
+   
+            <Spacer />
+            <Spacer />
             <Spacer />
         </Container>
         <CsvTable />

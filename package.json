@@ -22,6 +22,7 @@
   "dependencies": {
     "@nextui-org/react": "^1.0.0-beta.9",
     "@wasm-tool/wasm-pack-plugin": "^1.6.0",
+    "json-to-csv-export": "^1.1.0",
     "next": "^12.1.6",
     "next-compose-plugins": "^2.2.1",
     "next-pwa": "^5.5.4",
@@ -30,7 +31,9 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
+    "react-json-csv": "^2.0.0",
     "react-toastify": "^9.0.5",
+    "remove": "^0.1.5",
     "subnetter": "^1.2.0"
   }
 }
